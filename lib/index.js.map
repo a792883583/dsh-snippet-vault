@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/index.ts"],
-  "sourcesContent": ["/**\n * dsh-snippet-vault \u2014 \u5BBF\u4E3B\u4FA7\u58F0\u660E\u3002\n * @module dsh-snippet-vault\n */\n\nimport type { Context } from '@deepseek-ai/cordis'\n\nexport function apply(_ctx: Context): void {\n  // \u7EAF\u5BA2\u6237\u7AEF UI \u63D2\u4EF6\uFF0C\u5BBF\u4E3B\u4FA7\u5360\u4F4D\n}\n\nexport default { apply }\n"],
-  "mappings": ";AAOO,SAAS,MAAM,MAAqB;AAE3C;AAEA,IAAO,cAAQ,EAAE,MAAM;",
+  "sourcesContent": ["/**\n * dsh-snippet-vault \u2014 \u5BBF\u4E3B\u4FA7\u58F0\u660E\u3002\n * @module dsh-snippet-vault\n */\n\nimport type { Context } from '@deepseek-ai/cordis'\n\nexport const name = 'dsh-snippet-vault'\n\nexport const inject: string[] = []\n\nexport function apply(_ctx: Context): void {\n  // \u7EAF\u5BA2\u6237\u7AEF UI \u63D2\u4EF6\uFF0C\u5BBF\u4E3B\u4FA7\u5360\u4F4D\n}\n\nexport default { name, apply, inject }\n"],
+  "mappings": ";AAOO,IAAM,OAAO;AAEb,IAAM,SAAmB,CAAC;AAE1B,SAAS,MAAM,MAAqB;AAE3C;AAEA,IAAO,cAAQ,EAAE,MAAM,OAAO,OAAO;",
   "names": []
 }

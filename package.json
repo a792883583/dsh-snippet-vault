@@ -1,6 +1,6 @@
 {
   "name": "dsh-snippet-vault",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prompt & instruction snippet vault for DSH Web GUI: manage, search, and one-click insert commonly used prompts and instructions with dynamic placeholders.",
   "license": "MIT",
   "author": "Jaden Tang <jaden.tang@sjfood.com>",

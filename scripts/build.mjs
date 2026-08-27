@@ -15,18 +15,28 @@ await build({
   sourcemap: true,
 })
 
-// 2. Client bundle (IIFE with __ModuleLoader__)
+// 2. Client bundle (CJS factory wrapped for __ModuleLoader__)
+const clientBanner = `window.__ModuleLoader__ && window.__ModuleLoader__.load({
+  id: "dsh-snippet-vault",
+  factory: (require) => {
+    var module = { exports: {} };
+    var exports = module.exports;
+    Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
+`
+const clientFooter = `    return module.exports;
+  }
+});`
+
 await build({
   entryPoints: ['src/client/index.ts'],
   outfile: 'lib/client.js',
   bundle: true,
-  format: 'iife',
-  globalName: '__dsh_client_snippet_vault__',
+  format: 'cjs',
   banner: {
-    js: `window.__ModuleLoader__ && window.__ModuleLoader__.load({ id: "dsh-snippet-vault", factory: function(require, exports, module) {`,
+    js: clientBanner,
   },
   footer: {
-    js: `}});`,
+    js: clientFooter,
   },
   external: ['react', 'react/jsx-runtime', 'react-dom', 'react-dom/client', '@deepseek-ai/*'],
   sourcemap: true,
